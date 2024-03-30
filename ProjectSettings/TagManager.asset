@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - saw
+  - check2
+  - check1
   layers:
   - Default
   - TransparentFX
