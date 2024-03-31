@@ -41,7 +41,7 @@ public class jump : MonoBehaviour
     {
         onground=gr.getonground();
         
-        animator.SetBool("isjumping", !gr.getonground());
+        //animator.SetBool("isjumping", !gr.getonground());
         velocity =body.velocity;
         if (onground)
         {

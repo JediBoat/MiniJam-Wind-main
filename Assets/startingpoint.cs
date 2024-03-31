@@ -31,12 +31,13 @@ public class startingpoint : MonoBehaviour
         {
             if (Random.value < 0.5f)
             {
-                startpos = new Vector2(-4f, -3f);
-
+                
+                startpos = new Vector2(-18.17f, 6.56f);
             }
             else
             {
-                startpos = new Vector2(66f, 14f);
+                
+                startpos = new Vector2(77.39f, -8.13f);
             }
             transform.position = startpos;
         }

@@ -49,16 +49,16 @@ public class move : MonoBehaviour
             // ... flip the player.
             Flip();
         }
-        animator.SetFloat("SPEED",Mathf.Abs (direction.x));
+        //animator.SetFloat("SPEED",Mathf.Abs (direction.x));
         desiredvelocity = new Vector2(direction.x, 0f) * Mathf.Max(maxspeed - gr.getfriction(), 0f);
         if (input.retrievmoveupinput()>0&& isclimbing()) {
-            animator.SetBool("climb", true);
+           // animator.SetBool("climb", true);
            body.transform.position+=Vector3.up*acceleration * Time.deltaTime;
             //velocity.y = Mathf.MoveTowards(velocity.y, desiredvelocity.y, maxspeedchange);
         }
         if (isclimbing()) { body.gravityScale = 0; }
         if (!isclimbing()) { body.gravityScale = 1;
-            animator.SetBool("climb", false);
+            //animator.SetBool("climb", false);
         }
     }
 
