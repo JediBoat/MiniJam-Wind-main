@@ -7,31 +7,37 @@ using UnityEngine.Assertions.Must;
 
 public class weapon : MonoBehaviour
 {
-    public Animator animator;
+  
+
+    // Start is called before the first frame update
+
+
+    // Update is called once per frame
+    //public Animator animator;
     public Transform firePoint;
     public GameObject bulletPrefab;
-    
+
     // Start is called before the first frame update
 
 
     // Update is called once per frame
     void Update()
     {
-        
-        if (Input.GetButtonDown("Fire1"))
+
+        if (Input.GetButtonDown("Fire3"))
         {
 
-            animator.SetBool("isfiring", true);
-            
+            //animator.SetBool("isfiring", true);
+
             Shoot();
 
         }
-       
-        
+
+
     }
     void Shoot()
     {
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        
+
     }
 }
