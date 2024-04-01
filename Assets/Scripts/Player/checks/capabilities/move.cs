@@ -9,7 +9,7 @@ public class move : MonoBehaviour
     public int edefeated = 0;
     public Animator animator;
     [SerializeField] private inputcontrol input=null;
-    [SerializeField, Range(0f, 100f)] private float maxspeed = 4f;
+    [SerializeField, Range(0f, 100f)] private float maxspeed = 7f;
     [SerializeField, Range(0f, 100f)] private float maxacceleration = 35f;
     [SerializeField, Range(0f, 100f)] private float maxairacceleration = 20f;
     [SerializeField] LayerMask ladder;
@@ -88,27 +88,27 @@ public class move : MonoBehaviour
         transform.Rotate(0f, 180f, 0f);
     }
 
-    public int health = 100;
-    public GameObject deathEffect;
+    // public int health = 100;
+    // public GameObject deathEffect;
 
-    public void TakeDamage(int damage)
-    {
-        health -= damage;
+    // public void TakeDamage(int damage)
+    // {
+    //     health -= damage;
 
-        if (health <= 0)
-        {
-            Die();
-        }
-    }
+    //     if (health <= 0)
+    //     {
+    //         Die();
+    //     }
+    // }
 
-    void Die()
-    {
-        Instantiate(deathEffect, transform.position, Quaternion.identity);
-        Destroy(gameObject);
-        animator.SetBool("alive", false);
-    }
-    public void adddefeat()
-    {
-        edefeated++;
-    }
+    // void Die()
+    // {
+    //     Instantiate(deathEffect, transform.position, Quaternion.identity);
+    //     Destroy(gameObject);
+    //     animator.SetBool("alive", false);
+    // }
+    // public void adddefeat()
+    // {
+    //     edefeated++;
+    // }
 }

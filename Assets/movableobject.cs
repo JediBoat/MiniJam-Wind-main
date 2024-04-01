@@ -25,8 +25,10 @@ public class movableobject : MonoBehaviour
     private float acceleration;
     private bool onground;
     bool playercol = false;
+
+    public AudioSource moving;
     SpriteRenderer m_SpriteRenderer;
-    //The Color to be assigned to the Renderer’s Material
+    //The Color to be assigned to the Rendererï¿½s Material
     Color m_NewColor;
     // Start is called before the first frame update
     void Start()
@@ -73,7 +75,7 @@ public class movableobject : MonoBehaviour
             acceleration = onground ? maxacceleration : maxairacceleration;
             maxspeedchange = acceleration * Time.deltaTime;
             velocity.x = Mathf.MoveTowards(velocity.x, desiredvelocity.x, maxspeedchange);
-
+            moving.Play();
             body.velocity = velocity;
         }
         else
