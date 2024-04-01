@@ -41,12 +41,12 @@ public class jump : MonoBehaviour
     {
         onground=gr.getonground();
         
-        //animator.SetBool("isjumping", !gr.getonground());
+        animator.SetBool("isjumping", !gr.getonground());
         velocity =body.velocity;
         if (onground)
         {
             jumphase = 0;
-            //animator.SetBool("isjumping", false);
+            animator.SetBool("isjumping", false);
         }
         if (desiredjump) { desiredjump = false; jumpaction(); }
         if (body.velocity.y > 0) { body.gravityScale=upwardmovemulti; }
