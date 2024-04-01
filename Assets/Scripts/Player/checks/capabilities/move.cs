@@ -8,6 +8,8 @@ public class move : MonoBehaviour
 {
     public int edefeated = 0;
     public Animator animator;
+
+    // public AudioSource stepssound;
     [SerializeField] private inputcontrol input=null;
     [SerializeField, Range(0f, 100f)] private float maxspeed = 7f;
     [SerializeField, Range(0f, 100f)] private float maxacceleration = 35f;
@@ -49,7 +51,12 @@ public class move : MonoBehaviour
             // ... flip the player.
             Flip();
         }
-        //animator.SetFloat("SPEED",Mathf.Abs (direction.x));
+        animator.SetFloat("SPEED",Mathf.Abs (direction.x));
+
+        // if(Mathf.Abs (direction.x) > 0){
+        //     stepssound.Play();
+        // }
+        
         desiredvelocity = new Vector2(direction.x, 0f) * Mathf.Max(maxspeed - gr.getfriction(), 0f);
         if (input.retrievmoveupinput()>0&& isclimbing()) {
            // animator.SetBool("climb", true);
