@@ -11,12 +11,12 @@ public class ground : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         evaluatecollision(collision);
-        retrievefriction(collision);
+        // retrievefriction(collision);
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
         evaluatecollision(collision);
-        retrievefriction(collision);
+        // retrievefriction(collision);
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
@@ -31,15 +31,15 @@ public class ground : MonoBehaviour
             onground |= normal.y > 0.9f;
         }
     }
-    private void retrievefriction(Collision2D collision)
-    {
-        PhysicsMaterial2D material = collision.rigidbody.sharedMaterial;
-        friction = 0;
-        if (material != null)
-        {
-            friction = material.friction;
-        }
-    }
+    // private void retrievefriction(Collision2D collision)
+    // {
+    //     PhysicsMaterial2D material = collision.rigidbody.sharedMaterial;
+    //     friction = 0;
+    //     if (material != null)
+    //     {
+    //         friction = material.friction;
+    //     }
+    // }
     public bool getonground() {  return onground; }
     public float getfriction() { return friction; }
 }

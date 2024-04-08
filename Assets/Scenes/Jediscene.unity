@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneBuildIndex: 1
+  script: {fileID: 0}
 --- !u!61 &354920284
 BoxCollider2D:
   m_ObjectHideFlags: 0

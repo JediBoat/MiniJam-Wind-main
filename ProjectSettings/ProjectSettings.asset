@@ -684,7 +684,13 @@ PlayerSettings:
   XboxOneOverrideIdentityName: 
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
-  cloudServicesEnabled: {}
+  cloudServicesEnabled:
+    Build: 0
+    Game Performance: 0
+    Legacy Analytics: 0
+    Purchasing: 0
+    UDP: 0
+    Unity Ads: 0
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -704,11 +710,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: da7cc733-abf7-4b4d-b391-c1c9537b6499
+  cloudProjectId: 8f8edf1b-641a-4005-b9fe-a3cfa61af32a
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: MiniJamWind
-  organizationId: pomalec
+  organizationId: boateng_jk
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
