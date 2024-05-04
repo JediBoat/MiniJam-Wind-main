@@ -1,17 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
-public class platformscript : MonoBehaviour
+public class platformsidebysidescript : MonoBehaviour
 {
-
-    
-    private float speedy;
+   private float speedx;
     [SerializeField]private Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
-        speedy = -0.05f;
+        speedx = -0.05f;
     }
 
     void Update()
@@ -22,7 +21,7 @@ public class platformscript : MonoBehaviour
 
     private void moving()
     {
-       rb.velocity = new Vector2(0,rb.velocity.y + speedy);
+       rb.velocity = new Vector2(rb.velocity.x + speedx,0);
     }
 
     
@@ -34,12 +33,12 @@ public class platformscript : MonoBehaviour
         if (collider.gameObject.CompareTag("check1"))
         {
             rb.velocity = new Vector2(0,0);
-            speedy = 0.05f;
+            speedx = 0.05f;
             
         }
         else if(collider.gameObject.CompareTag("check2")){
             rb.velocity = new Vector2(0,0);
-            speedy = -0.05f;
+            speedx = -0.05f;
         }
         
     }
