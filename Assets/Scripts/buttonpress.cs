@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
 
-public class platformsidebysidescript : MonoBehaviour
+public class NewBehaviourScript : MonoBehaviour
 {
    private float speedx;
     [SerializeField]private Rigidbody2D rb;
@@ -11,7 +10,7 @@ public class platformsidebysidescript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        speedx = -0.05f;
+        speedx = -0f;
     }
 
     void Update()
@@ -24,9 +23,6 @@ public class platformsidebysidescript : MonoBehaviour
     {
        rb.velocity = new Vector2(rb.velocity.x + speedx,0);
     }
-
-    
-
 
      private void OnTriggerEnter2D(Collider2D collider)
     {
@@ -43,4 +39,14 @@ public class platformsidebysidescript : MonoBehaviour
         }
         
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {   
+            speedx = -0.05f;
+        }
+    }
+
+    
 }
