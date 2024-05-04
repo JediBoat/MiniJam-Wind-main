@@ -75,7 +75,6 @@ public class movableobject : MonoBehaviour
             acceleration = onground ? maxacceleration : maxairacceleration;
             maxspeedchange = acceleration * Time.deltaTime;
             velocity.x = Mathf.MoveTowards(velocity.x, desiredvelocity.x, maxspeedchange);
-            moving.Play();
             body.velocity = velocity;
         }
         else
