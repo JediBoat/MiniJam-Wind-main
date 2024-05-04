@@ -33,11 +33,13 @@ public class mobmovement : MonoBehaviour
         {
             rb.velocity = new Vector2(0,0);
             speedx = 0.05f;
+            Flip();
             
         }
         else if(collider.gameObject.CompareTag("check2")){
             rb.velocity = new Vector2(0,0);
             speedx = -0.05f;
+            Flip();
         }
         
     }
@@ -49,6 +51,12 @@ public class mobmovement : MonoBehaviour
             Player.position = checkpoint.position;
             
         }
+    }
+
+    private void Flip()
+    {
+
+        transform.Rotate(0f, 180f, 0f);
     }
 
     
