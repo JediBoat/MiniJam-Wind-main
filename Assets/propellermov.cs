@@ -17,6 +17,7 @@ public class propellermov : MonoBehaviour
     BoxCollider2D boxCollider;
     private float maxspeedchange;
     private float acceleration;
+    public Animator animator;
     SpriteRenderer m_SpriteRenderer;
     // Start is called before the first frame update
     void Start()
@@ -53,6 +54,7 @@ public class propellermov : MonoBehaviour
         {
             velocity = body.velocity;
             velocity.y++ ;
+            animator.SetBool("e_press", true);
 
             body.velocity = velocity;
             body.gravityScale = 1f;
@@ -61,11 +63,12 @@ public class propellermov : MonoBehaviour
         {
             if (velocity.y==0f)
             {
-                
+                animator.SetBool("e_press", false);
             }
             else
             {
                 velocity.y--;
+                animator.SetBool("e_press", false);
             }
             body.gravityScale = 9.1f;
             body.velocity = velocity;
