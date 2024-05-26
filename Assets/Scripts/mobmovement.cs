@@ -12,7 +12,7 @@ public class mobmovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        speedx = -0.05f;
+        speedx = -0.015f;
     }
 
     void Update()
@@ -32,13 +32,13 @@ public class mobmovement : MonoBehaviour
         if (collider.gameObject.CompareTag("check1"))
         {
             rb.velocity = new Vector2(0,0);
-            speedx = 0.05f;
+            speedx = 0.015f;
             Flip();
             
         }
         else if(collider.gameObject.CompareTag("check2")){
             rb.velocity = new Vector2(0,0);
-            speedx = -0.05f;
+            speedx = -0.015f;
             Flip();
         }
         

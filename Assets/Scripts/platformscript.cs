@@ -11,7 +11,7 @@ public class platformscript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        speedy = -0.05f;
+        speedy = -0.025f;
     }
 
     void Update()
@@ -34,12 +34,12 @@ public class platformscript : MonoBehaviour
         if (collider.gameObject.CompareTag("check1"))
         {
             rb.velocity = new Vector2(0,0);
-            speedy = 0.05f;
+            speedy = 0.025f;
             
         }
         else if(collider.gameObject.CompareTag("check2")){
             rb.velocity = new Vector2(0,0);
-            speedy = -0.05f;
+            speedy = -0.025f;
         }
         
     }
