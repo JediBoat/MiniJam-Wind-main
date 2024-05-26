@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class propellermov : MonoBehaviour
@@ -20,6 +21,10 @@ public class propellermov : MonoBehaviour
     public Animator animator;
     SpriteRenderer m_SpriteRenderer;
     // Start is called before the first frame update
+    public Transform firePoint;
+    public GameObject windballPrefab;
+
+
     void Start()
     {
         playercol = false;
@@ -55,6 +60,7 @@ public class propellermov : MonoBehaviour
             velocity = body.velocity;
             velocity.y++ ;
             animator.SetBool("e_press", true);
+            Shoot();
 
             body.velocity = velocity;
             body.gravityScale = 1f;
@@ -74,6 +80,16 @@ public class propellermov : MonoBehaviour
             body.velocity = velocity;
         }
     }
+
+    void Shoot()
+    {    
+       var newobject = Instantiate(windballPrefab, firePoint.position, firePoint.rotation);
+
+        Destroy(newobject, 1f);
+
+    }
+
+    
     private void FixedUpdate()
     {
 
