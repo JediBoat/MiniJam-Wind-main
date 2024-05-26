@@ -25,7 +25,7 @@ public class movemanualplatform : MonoBehaviour
 
        if (script.buttonpressed  == true)
         {
-            speedy = 0.05f;
+            speedy = 0.025f;
             print("yes");
             script.buttonpressed  = false;
         }
@@ -40,12 +40,12 @@ public class movemanualplatform : MonoBehaviour
         if (collider.gameObject.CompareTag("check1"))
         {
             rb.velocity = new Vector2(0,0);
-            speedy = 0.05f;
+            speedy = 0.025f;
             
         }
         else if(collider.gameObject.CompareTag("check2")){
             rb.velocity = new Vector2(0,0);
-            speedy = -0.05f;
+            speedy = -0.025f;
         }
         
     }
